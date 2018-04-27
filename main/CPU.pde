@@ -279,12 +279,11 @@ public class CPU{
         break;
         case 0x21:
           if(debug){
-            println("Drawing sprite at x:"+(int)a+" y: "+(int)b);
+            println("Drawing sprite at x: "+(int)a+" y: "+(int)b);
           }
           boolean[][] sprite = new boolean[8][8];
           for(int x=0;x<8;x++){
             for(int y=0;y<8;y++){
-              //println(Integer.toBinaryString(spriteMem[((inputs&0xFF00)>>8)+y]).length(),Integer.toBinaryString(spriteMem[((inputs&0xFF00)>>8)+y]).charAt(x));
               sprite[x][y]=false;
               String binary = Integer.toBinaryString(spriteMem[((inputs&0xFF00)>>8)+y]);
               binary = checkBinary(binary,8);
